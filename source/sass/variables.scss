@@ -1,0 +1,27 @@
+$color-white: #ffffff;
+$color-black: #000000;
+$bg-green: #1E3C00;
+
+%flex-wrap-space {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+%flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+%rel-block {
+	position: relative;
+	display: block;
+}
+
+%abs-content {
+	position: absolute;
+	content: '';
+}
+
+$tablet-width: 768px;
+$desktop-width: 1440px;
