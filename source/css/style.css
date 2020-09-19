@@ -101,7 +101,7 @@ img {
       font-weight: 700;
       font-size: 60px; } }
   .header-headline:hover {
-    text-shadow: 6px 6px 0 #1E3C00; }
+    text-shadow: 6px 6px 0 #116315; }
 
 .pages-list {
   margin: 10px auto 10px auto;
@@ -150,7 +150,7 @@ img {
         transition: all 280ms ease-in-out; }
       .pages-list .pages-list-item .page-link:hover::after, .pages-list .pages-list-item .page-link:hover::before {
         width: 70%;
-        border-color: #1E3C00;
+        border-color: #116315;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-transition: width 350ms ease-in-out;
@@ -183,7 +183,7 @@ img {
       top: -170px;
       left: 219px;
       opacity: 0;
-      background-color: #1E3C00; }
+      background-color: #116315; }
       @media (min-width: 1440px) {
         .index-main .persons-list::after {
           opacity: 1; } }
@@ -211,7 +211,7 @@ img {
         height: 2px;
         top: 53%;
         left: 0;
-        background-color: #1E3C00; }
+        background-color: #116315; }
         @media (min-width: 768px) {
           .index-main .persons-list .persons-list-item::before {
             width: 40%;
@@ -287,7 +287,7 @@ img {
           opacity: 0;
           -webkit-transition-delay: .1s;
                   transition-delay: .1s;
-          background-color: #1E3C00;
+          background-color: #116315;
           -webkit-transition: ease opacity 0.3s;
           transition: ease opacity 0.3s; }
         .index-main .persons-list .persons-list-item .person::before {
@@ -329,7 +329,7 @@ img {
   position: relative;
   margin: 0 auto;
   padding: 20px 0;
-  border-top: 3px solid #1E3C00; }
+  border-top: 3px solid #116315; }
   @media (min-width: 1440px) {
     .index-footer {
       padding: 40px 0; } }
