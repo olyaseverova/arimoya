@@ -15,7 +15,7 @@
 
   <div id="app" class="main">
 
-    <header class="index-header audio-header">
+    <header class="index-header">
       <a class="header-headline link" :href="arimoya_link">{{ arimoya }}</a>
       <div class="menu" @click="openMenu">
         <div class="hambergerIcon" ref="burger"></div>
@@ -25,6 +25,7 @@
           <a :href="page.href" class="page-link link" :class="{ 'active-page': page.status }">{{ page.name }}</a>
         </li>
       </ul>
+      <img class="header-img" src="img/index-img.jpg" alt="Альбом Introitus">
     </header>
 
     <main class="audio-main">
