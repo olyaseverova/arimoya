@@ -15,7 +15,7 @@
 
   <div id="app" class="main">
 
-    <header class="index-header">
+    <header class="index-header info-header">
       <a class="header-headline link" :href="arimoya_link">{{ arimoya }}</a>
       <div class="menu" @click="openMenu">
         <div class="hambergerIcon" ref="burger"></div>
@@ -25,7 +25,6 @@
           <a :href="page.href" class="page-link link" :class="{ 'active-page': page.status }">{{ page.name }}</a>
         </li>
       </ul>
-      <img class="header-img" src="img/index-img.jpg" alt="Альбом Introitus">
     </header>
 
     <main class="repertoire-main">
@@ -34,9 +33,13 @@
           <a class="composition-link link" :href="composition.href">{{ composition.name }}</a>
         </li>
       </ol>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/iELrYy8EeRQ" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+      <ul class="iframes-list list">
+        <li v-for="iframe in iframes" class="iframes-list-item">
+          <iframe :src="iframe" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </li>
+      </ul>
     </main>
 
   </div>
@@ -79,6 +82,12 @@
           { name: 'Авторская сюита «Светлые стихиали»', href: 'https://youtu.be/6EKc1UBu0sI' },
           { name: 'Авторская сюита «Аримойя. Мечта увидеть»', href: 'https://youtu.be/qo4pSHGaqhw' },
           { name: 'Авторская сюита «Миры просветления»', href: 'https://youtu.be/QH5r8lnuMDU' },
+        ],
+
+        iframes: [
+          'https://www.youtube.com/embed/iELrYy8EeRQ',
+          'https://www.youtube.com/embed/LRpKLHHnrbY',
+          'https://www.youtube.com/embed/NYRnUjMinB0'
         ]
       }
     })
