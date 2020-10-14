@@ -1,0 +1,52 @@
+.repertoire-main {
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    justify-content: space-between;
+    width: 1300px;
+  }
+}
+
+.compositions-list {
+  margin: 70px 0;
+  padding: 0;
+  color: $color-white;
+
+  @media (min-width: $desktop-width) {
+    width: 560px;
+  }
+
+  .compositions-list-item {
+    list-style-type: circle;
+    margin-bottom: 10px;
+
+    span {
+      display: none;
+    }
+
+    .composition-link {
+      color: $color-white;
+      transition: 0.5s ease;
+    }
+
+    &:hover .composition-link {
+      color: $bg-green;
+    }
+
+    &::-moz-list-number {
+      color: $color-white;
+    }
+  }
+}
+
+iframe {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    margin: 160px 0;
+  }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>ARIMOYATRIO</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/vue.js"></script>
+</head>
+
+<body>
+
+
+  <div id="app" class="main">
+
+    <header class="index-header audio-header">
+      <a class="header-headline link" :href="arimoya_link">{{ arimoya }}</a>
+      <div class="menu" @click="openMenu">
+        <div class="hambergerIcon" ref="burger"></div>
+      </div>
+      <ul class="pages-list list none" ref="pages">
+        <li v-for="page in pages" class="pages-list-item">
+          <a :href="page.href" class="page-link link" :class="{ 'active-page': page.status }">{{ page.name }}</a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="audio-main">
+      <ol class="audios-list">
+        <li v-for="audio in audios" class="audios-list-item">
+          <a class="audio-link link" :href="audio.link">{{ audio.name }}</a>
+        </li>
+      </ol>
+      <a class="audio-img-link" href="https://cloud.mail.ru/public/njvZ/4chHBLuN4">
+        <img src="img/audio.jpg" alt="Альбом Introitus">
+      </a>
+    </main>
+
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+
+      methods: {
+        openMenu: function (event) {
+          this.$refs.burger.classList.toggle('open')
+          this.$refs.pages.classList.toggle('none')
+          this.$refs.pages.classList.toggle('block')
+        }
+      },
+
+      data: {
+        arimoya: 'АРИМОЙЯ ТРИО',
+        arimoya_link: 'index.html',
+
+        pages: [
+          { href: 'about.html', name: 'О нас', status: false },
+          { href: 'repertoire.html', name: 'РЕПЕРТУАР', status: false },
+          { name: 'АУДИО', status: true },
+          { href: 'test.html', name: 'КОНТАКТЫ', status: false },
+        ],
+
+        audios: [
+          { name: 'Introitus (Mozart)', link: 'https://cloud.mail.ru/public/njvZ/4chHBLuN4/01%20-%20Introitus.mp3' },
+          { name: 'Chorale Prelude (Bach)', link: 'https://cloud.mail.ru/public/njvZ/4chHBLuN4/02%20-%20Chorale%20Prelude.mp3' },
+          { name: 'Swan Lake (Tchaikovsky)', link: 'https://cloud.mail.ru/public/njvZ/4chHBLuN4/03%20-%20Swan%20Lake.mp3' },
+          { name: 'Prelude (Chopin)', link: 'https://cloud.mail.ru/public/njvZ/4chHBLuN4/04%20-%20Prelude.mp3' },
+          { name: 'Vocalise (Rachmaninov)', link: 'https://cloud.mail.ru/public/njvZ/4chHBLuN4/05%20-%20Vocalise.mp3' },
+          { name: 'Pas De Deux (Tchaikovsky)', link: 'https://cloud.mail.ru/public/njvZ/4chHBLuN4/06%20-%20Pas%20De%20Deux.mp3' },
+          { name: 'Meditatoin (Massenet)', link: 'https://cloud.mail.ru/public/njvZ/4chHBLuN4/07%20-%20Meditation.mp3' },
+          { name: 'Air (Bach)', link: 'https://cloud.mail.ru/public/njvZ/4chHBLuN4/08%20-%20Air.mp3' },
+        ]
+      }
+    })
+  </script>
+
+</body>
+
+</html>

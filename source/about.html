@@ -16,18 +16,18 @@
   <div id="app" class="main">
 
     <header class="index-header">
-        <a class="header-headline link">{{ arimoya }}</a>
-        <div class="menu" @click="openMenu">
-          <div class="hambergerIcon" ref="burger"></div>
-        </div>
-        <ul class="pages-list list none" ref="pages">
-          <li v-for="page in pages" class="pages-list-item">
-            <a :href="page.href" class="page-link link" :class="{ 'active-page': page.status }">{{ page.name }}</a>
-          </li>
-        </ul>
+      <a class="header-headline link" :href="arimoya_link">{{ arimoya }}</a>
+      <div class="menu" @click="openMenu">
+        <div class="hambergerIcon" ref="burger"></div>
+      </div>
+      <ul class="pages-list list none" ref="pages">
+        <li v-for="page in pages" class="pages-list-item">
+          <a :href="page.href" class="page-link link" :class="{ 'active-page': page.status }">{{ page.name }}</a>
+        </li>
+      </ul>
     </header>
 
-    <main class="index-main">
+    <main class="about-main">
       <ul class="texts-list list">
         <li v-for="text in texts" class="texts-list-item">
           <p class="text">{{ text }}</p>
@@ -51,9 +51,10 @@
 
       data: {
         arimoya: 'АРИМОЙЯ ТРИО',
+        arimoya_link: 'index.html',
 
         pages: [
-          { href: 'about.html', name: 'О нас', status: false },
+          { name: 'О нас', status: true },
           { href: 'repertoire.html', name: 'РЕПЕРТУАР', status: false },
           { href: 'audio.html', name: 'АУДИО', status: false },
           { href: 'test.html', name: 'КОНТАКТЫ', status: false },

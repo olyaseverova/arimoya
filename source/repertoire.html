@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>ARIMOYATRIO</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/vue.js"></script>
+</head>
+
+<body>
+
+
+  <div id="app" class="main">
+
+    <header class="index-header">
+      <a class="header-headline link" :href="arimoya_link">{{ arimoya }}</a>
+      <div class="menu" @click="openMenu">
+        <div class="hambergerIcon" ref="burger"></div>
+      </div>
+      <ul class="pages-list list none" ref="pages">
+        <li v-for="page in pages" class="pages-list-item">
+          <a :href="page.href" class="page-link link" :class="{ 'active-page': page.status }">{{ page.name }}</a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="repertoire-main">
+      <ol class="compositions-list">
+        <li v-for="composition in compositions" class="compositions-list-item">
+          <a class="composition-link link" :href="composition.href">{{ composition.name }}</a>
+        </li>
+      </ol>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/iELrYy8EeRQ" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </main>
+
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+
+      methods: {
+        openMenu: function (event) {
+          this.$refs.burger.classList.toggle('open')
+          this.$refs.pages.classList.toggle('none')
+          this.$refs.pages.classList.toggle('block')
+        }
+      },
+
+      data: {
+        arimoya: 'АРИМОЙЯ ТРИО',
+        arimoya_link: 'index.html',
+
+        pages: [
+          { href: 'about.html', name: 'О нас', status: false },
+          { name: 'РЕПЕРТУАР', status: true },
+          { href: 'audio.html', name: 'АУДИО', status: false },
+          { href: 'test.html', name: 'КОНТАКТЫ', status: false },
+        ],
+
+        compositions: [
+          { name: 'Фантазии на темы Баха', href: 'https://youtu.be/iELrYy8EeRQ' },
+          { name: 'Фантазии на темы Шопена', href: 'https://youtu.be/LRpKLHHnrbY' },
+          { name: '«Квинтэссенция» (обработки произведений П.И.Чайковского)', href: 'https://youtu.be/NYRnUjMinB0' },
+          { name: 'Венские классики» (обработки произведений В.А.Моцарта и Л.В. Бетховена)', href: 'https://youtu.be/nMeTDTru51Y' },
+          { name: '«Русское Адажио» (обработки произведений Бородина, Чайковского, Рахманинова, Хачатуряна, Артемьева)', href: 'https://youtu.be/v3ggAyb_SJs' },
+          { name: '«Музыка любви» (Сюита по произволениям Э. Артемьева)', href: 'https://youtu.be/1NSNIxGff1Q' },
+          { name: '«Через миры и века» (программа по песням Исаака Дунаевского)', href: 'https://youtu.be/SBiZtE2mPw0' },
+          { name: 'Обработка Второго концерта С.В. Рахманинова', href: 'https://youtu.be/TxMowuTSCHo' },
+          { name: 'Фантазии на темы Битлз', href: 'https://youtu.be/pjEKH_ZUFtI' },
+          { name: '«Французская музыка. Классики и современники»', href: 'https://youtu.be/PfAzNy1UMVo' },
+          { name: '«Классики, романтики и другие» (Обработки Бетховена, Моцарта, Грига, Массне, Сен-Санса, Морриконе)', href: 'https://youtu.be/xg7Ybrz-fHk' },
+          { name: 'Авторская сюита «Светлые стихиали»', href: 'https://youtu.be/6EKc1UBu0sI' },
+          { name: 'Авторская сюита «Аримойя. Мечта увидеть»', href: 'https://youtu.be/qo4pSHGaqhw' },
+          { name: 'Авторская сюита «Миры просветления»', href: 'https://youtu.be/QH5r8lnuMDU' },
+        ]
+      }
+    })
+  </script>
+
+</body>
+
+</html>
